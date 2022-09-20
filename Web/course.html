@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="course.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="price-toggler-container">
+            <span>monthly</span>
+            <div class="price-toggle"></div>
+            <span>yearly</span>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <div class="img">
+                    <ion-icon name="paper-plane-outline"></ion-icon>
+
+                </div>
+                <h3>Basic</h3>
+                <div class="amount">
+                    <span class="currenccy">$</span>
+                    <span class="price">25</span>
+                    <span class="duration">/mo</span>
+
+                </div>
+                <ul>
+                    <li>All basic concepts </li>
+                    <li>All basic concepts </li>
+                    <li>All basic concepts </li>
+                    <li>All basic concepts </li>
+                    <li>All basic concepts </li>
+
+                </ul>
+                <a href="#" class="btn">Select</a>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <ion-icon name="airplane-outline"></ion-icon>
+                </div>
+                <h3>Standerd</h3>
+                <div class="amount">
+                    <span class="currenccy">$</span>
+                    <span class="price">55</span>
+                    <span class="duration">/mo</span>
+
+                </div>
+                <ul>
+                    <li>All basic concepts </li>
+                    <li>All basic concepts </li>
+                    <li>All basic concepts </li>
+                    <li>All basic concepts </li>
+                    <li>All basic concepts </li>
+
+                </ul>
+                <a href="#" class="btn">Select</a>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <ion-icon name="rocket-outline"></ion-icon>
+
+                </div>
+                <h3>Advance</h3>
+                <div class="amount">
+                    <span class="currenccy">$</span>
+                    <span class="price">115</span>
+                    <span class="duration">/mo</span>
+
+                </div>
+                <ul>
+                    <li>All basic concepts </li>
+                    <li>All basic concepts </li>
+                    <li>All basic concepts </li>
+                    <li>All basic concepts </li>
+                    <li>All basic concepts </li>
+
+                </ul>
+                <a href="index.html" class="btn">Select</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        let priceToggle = document.querySelector('.price-toggle');
+        let price = document.querySelectorAll('.price');
+        let duration = document.querySelectorAll('.duration');
+
+        priceToggle.onclick = () => {
+            priceToggle.classList.toggle('active');
+
+            if (priceToggle.classList.contains('active')) {
+                for (var i = 0; i < duration.length; i++) {
+                    duration[i].innerText = '/yr';
+                    for (var k = 0; k < price.length; k++) {
+                        price[k].innerText = price[k].innerText * 10;
+
+                    }
+                }
+
+            }
+            else {
+                for (var i = 0; i < duration.length; i++) {
+                    duration[i].innerText = '/mo';
+                }
+                for (var k = 0; k < price.length; k++) {
+                    price[k].innerText = price[k].innerText / 10;
+
+                }
+
+            }
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
